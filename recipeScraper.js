@@ -4,6 +4,8 @@ const $ = require('cheerio')
 
 async function scrape() {
   let html = await rp(url)
-  console.log($('.o-Ingredients__m-Body', html).text())
+  let ingredients = $('.o-Ingredients__m-Body', html).text()
+  let recipe = $('ol', html).text()
 }
+
 scrape()
